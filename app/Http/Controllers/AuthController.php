@@ -42,6 +42,9 @@ class AuthController extends Controller
             'email' => $email,
             'password' => Hash::make($request->password),
         ]);
+        $user->roles()->attach(Role::find((int)($request->role_id)));
+        /* $users_table->roles()->attach($role_table) */
+        /* todo: add map on new USER with ROLE to ROLE_USER */
 
         UserInfo::create([
             'user_firstname' => $request->firstname,

@@ -31,6 +31,15 @@
                 @enderror
             </div>
             <div>
+                <label class="auth-labels">Role</label>
+                <select name="role_id" required class="auth-textbox form-control form-control-sm">
+                    <option value=2>bookeeper</option>
+                    <option value=3>auditor</option>
+                    <option value=4>audasst</option>
+                    <option value=5>assembler</option>
+                </select>
+            </div>
+            <div>
                 <label class="auth-labels">Username</label>
                 <input type="text" name="name" value="{{ old('name') }}" required class="auth-textbox form-control form-control-sm">
                 @error('name')
