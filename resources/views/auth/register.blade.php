@@ -33,10 +33,11 @@
             <div>
                 <label class="auth-labels">Role</label>
                 <select name="role_id" required class="auth-textbox form-control form-control-sm">
-                    <option value=2>bookeeper</option>
-                    <option value=3>auditor</option>
-                    <option value=4>audasst</option>
-                    <option value=5>assembler</option>
+                    @foreach($roles as $role)
+                    @if ($role->id!=1)
+                    <option value={{ $role->id }}>{{ $role->name }}</option>
+                    @endif
+                    @endforeach
                 </select>
             </div>
             <div>
