@@ -16,7 +16,8 @@ class AuthController extends Controller
     //
     public function showRegistrationForm()
     {
-        return view('auth.register');
+        $roles = Role::all();
+        return view('auth.register')->with(compact('roles'));
     }
 
     public function register(Request $request)
